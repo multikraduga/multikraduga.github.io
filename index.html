@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            html{
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+            body {
+                display: flex;
+                justify-content:center;
+            }
+            #header {
+            text-align: center;
+            }
+            #penis {
+                position: absolute;
+                left: 0px;
+                top: 150px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id = 'header'>
+            <h1 id="name">My flying penis</h1>
+            <p id="press">press any button</p>
+        </div>
+        <img src="penis.png" id='penis'/>
+        <script>
+            document.title = 'MyFlyingPenis';
+            const penisPng = document.getElementById('penis')
+            let x = 0;
+            function penis_move(){
+                x = x+10;
+                if (x > window.innerWidth - 550) {
+                    alert('Congrats! You are the best penis mover!');
+                    x = 0;
+                }
+                penisPng.style.left = x+'px';
+            };
+            function penis_back() {
+                if(x > 5) {
+                    x = x-5
+                    penisPng.style.left = x+'px';
+                };
+            }
+            setInterval(penis_back, 50);
+            document.addEventListener('keypress', penis_move);
+        </script>
+    </body>
+</html> 
