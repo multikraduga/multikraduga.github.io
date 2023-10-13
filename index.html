@@ -16,13 +16,50 @@
                 position: absolute;
                 left: 0px;
                 top: 150px;
+                z-index: 2;
+            }
+            #vagina {
+                display:flex;
+                position:absolute;
+                right: -47px;
+                top: 298px;           
+                /* transform: scale(0.7); */
+            }
+            #vagina_right {
+                z-index: 3;
+            }
+            .vagina_size {
+                width: 120px;
+            }
+            .btn {
+                border: 1px solid;
+                padding: 6px;
+                border-radius: 8px;
+                background: lightgray;
+                color: white;
+                cursor: pointer;
+            }
+            .center {
+                display: flex;
+                justify-content: center;
+            }
+            #files {
+                display: none;
             }
         </style>
     </head>
     <body>
         <div id = 'header'>
             <h1 id="name">My flying penis</h1>
-            <p id="press">press any button</p>
+            <p id="press">keep tapping to enjoy</p>
+            <div class="center">
+                <label for="files" class="btn">Load your penis pic</label>
+                <input id="files" type="file">
+            </div>
+        </div>
+        <div id="vagina">
+            <img class='vagina_size' src="vagina_left.png" id="vagina_left"/>
+            <img class='vagina_size' src="vagina_right.png" id="vagina_right"/>
         </div>
         <img src="penis.png" id='penis'/>
         <script>
@@ -45,6 +82,15 @@
             }
             setInterval(penis_back, 50);
             document.addEventListener('keypress', penis_move);
+        </script>
+        <script>
+            const dialog = document.querySelector("#files");
+            dialog.addEventListener("change", function() {    
+                alert('Unfortunatly, your penis is too small. Don\'t worry! Try it later!');
+                const sound = new Audio();
+                sound.src = 'loh.mp3';
+                sound.play();
+            });
         </script>
     </body>
 </html> 
