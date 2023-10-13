@@ -58,10 +58,10 @@
             </div>
         </div>
         <div id="vagina">
-            <img class='vagina_size' src="vagina_left.png" id="vagina_left"/>
-            <img class='vagina_size' src="vagina_right.png" id="vagina_right"/>
+            <img class='vagina_size' src="./images/vagina_left.png" id="vagina_left"/>
+            <img class='vagina_size' src="./images/vagina_right.png" id="vagina_right"/>
         </div>
-        <img src="penis.png" id='penis'/>
+        <img src="./images/penis.png" id='penis'/>
         <script>
             document.title = 'MyFlyingPenis';
             const penisPng = document.getElementById('penis')
@@ -71,6 +71,12 @@
                 if (x > window.innerWidth - 550) {
                     alert('Congrats! You are the best penis mover!');
                     x = 0;
+                }
+                const midwidth = (window.innerWidth-550)/2;
+                if (x >= midwidth-5 && x < midwidth+5) {
+                    const sound = new Audio();
+                    sound.src = './sounds/davai.mp3';
+                    sound.play();
                 }
                 penisPng.style.left = x+'px';
             };
@@ -88,7 +94,7 @@
             dialog.addEventListener("change", function() {    
                 alert('Unfortunatly, your penis is too small. Don\'t worry! Try it later!');
                 const sound = new Audio();
-                sound.src = 'loh.mp3';
+                sound.src = './sounds/loh.mp3';
                 sound.play();
             });
         </script>
