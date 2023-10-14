@@ -39,6 +39,10 @@
                 color: white;
                 cursor: pointer;
             }
+            .btn:hover {
+                background-color:#ad1212;
+                transition: 700;
+            }
             .center {
                 display: flex;
                 justify-content: center;
@@ -46,17 +50,21 @@
             #files {
                 display: none;
             }
+            #instruction {
+                position: absolute;
+                top: 50%;
+            }
         </style>
     </head>
     <body>
         <div id = 'header'>
-            <h1 id="name">My flying penis</h1>
-            <p id="press">keep tapping to enjoy</p>
+            <h1 id="name">'My flying penis'</h1>
             <div class="center">
                 <label for="files" class="btn">Load your penis pic</label>
                 <input id="files" type="file">
             </div>
         </div>
+        <p id="instruction">keep tapping any buttons to enjoy</p>
         <div id="vagina">
             <img class='vagina_size' src="./images/vagina_left.png" id="vagina_left"/>
             <img class='vagina_size' src="./images/vagina_right.png" id="vagina_right"/>
